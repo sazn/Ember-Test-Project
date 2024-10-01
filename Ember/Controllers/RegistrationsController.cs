@@ -40,11 +40,15 @@ namespace Ember.Controllers
                     {
                         name = r.Name,
                         email = r.Email,
+                        password = r.Password,
                         accountType = r.AccountType,
                         createdAt = r.CreatedAt.ToString("o") // ISO 8601 format
                     }
                 })
             };
+
+            string json = JsonConvert.SerializeObject(result, Formatting.Indented);
+
 
             return Ok(result);
         }
